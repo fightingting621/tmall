@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+#first .first-left li{
+    font-size: 11px;
+    color: #ffffff;
+    float: left;
+    margin: 5px;
+}
+#first .first-left{
+    float: left;
+    margin-left: 30px;
+}
+#first .first-right{
+    float: right;
+    margin-right:30px;
+}
+#first>div{
+    background-color: #cccccc;
+    height: 28px;
+}
+#first .first-right li{
+    font-size: 11px;
+    color: #ffffff;
+    float: right;
+    margin: 5px;
+}
+#first .kuai ul{
+    display: inline;
+}
+a,span{
+    color: dimgray;
+}
