@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+            width: 3000px;
+        }
+        div{
+            height: 74px;
+            width: 35px;
+            background: url("../image/go-top.jpeg") -22px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+        div:hover{
+            background-position: -113px;
+        }
+    </style>
+</head>
+<body>
+这是顶部
+<div id="gototop">
+</div>
+<script>
+
+    var oDiv=document.getElementById("gototop")
+    // 获得这个Id,因为我要对这里面东西进行js操作,所以要把html里面的这个获取到
+    oDiv.onclick=function () {
+        var top=document.documentElement.scrollTop||document.body.scrollTop
+        // 获取这个滚动条当前的高，在这个基础上进行运算
+        var timer=setInterval(function(){
+            // 这是一个连续执行的函数，最后的50代表50ms
+            scrollTo(0,top*=0.6);
+            // 使其高度减少，这样减少不是匀速且越来越慢
+            console.log(top);
+            //输出滚动条上去时每个位置所处的高度
+            if(top<=1){
+                clearInterval(timer);
+                // 清除连续
+                scrollTo(0,0)
+                //回归顶部
+            }
+
+            }
+        ,50)
+    }
+
+
+
+
+</script>
+</body>
+</html>
