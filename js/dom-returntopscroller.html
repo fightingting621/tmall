@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroller</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        div{
+            width: 35px;
+            height: 74px;
+            background: url("../image/go-top.jpeg") -22px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+
+        }
+        div:hover{
+            background-position: -113px;
+        }
+    </style>
+</head>
+<body>
+这家店hi还剩多少不 的不是都是的看场地车不能就CDC的吃饭吧v积分v闹i耳机嘎尔尕分开了刚刚东南分别是你怕就发给购入股票二哥弄法国人你人会让你个哦阿尔诺让更 过热org爱情片【金额v安监局个二哥金额加购ro'ge'j'g
+<div id="top"></div>
+<script>
+    var oDiv=document.getElementById("top");
+    // var top=document.documentElement.scrollTop||document.body.scrollTop;
+
+     oDiv.onclick=function(){
+         var top=document.documentElement.scrollTop||document.body.scrollTop;
+         var timer=setInterval(function () {
+             scrollTo(0,top*=0.6);
+             console.log(top)
+             if(top<1){
+                 clearInterval(timer);
+                 scrollTo(0,0);
+             }
+         },50)
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

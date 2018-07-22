@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            outline-style: none;
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid black;
+            text-align: center;
+        /*//水平居中*/
+            /*display: none;*/
+            position: absolute;
+            /*absolute是相对于body的定位，relative是相对于他自己原来的位置*/
+            top:0;
+            left: 0;
+
+        }
+        #menu li{
+            border-bottom: 1px solid gray;
+            line-height: 30px;
+            /*垂直居中*/
+            list-style: none;
+        }
+        #menu li:hover{
+            background-color: darkslategray;
+        }
+        #menu li:last-child{
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>打开</li>
+        <li>复制</li>
+        <li>下载</li>
+        <li>删除</li>
+        <li>属性</li>
+    </ul>
+    <script>
+        var oMenu=document.getElementById("menu");
+        document.oncontextmenu=function (e) {
+            oMenu.style.top=e.clientY+"px";
+            // e.clientX,是指获取当前位置在body的top值，同理e.clientY是left值
+            oMenu.style.left=e.clientX+"px";
+            oMenu.style.display="block";
+            e.preventDefault();
+
+        }
+        document.onclick=function(e){
+            oMenu.style.display="none";
+        }
+
+    </script>
+</body>
+</html>
