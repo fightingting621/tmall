@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fighting</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            margin: 100px auto;
+            width: 400px;
+            position: relative;
+        }
+        ul{
+            position: absolute;
+            bottom: -378px;
+            right: 20px;
+        }
+        ul .selected{
+            background: orange;
+        }
+        ul li{
+            background: #000;
+            color: #fffdef;
+            width: 20px;
+            float: left;
+            list-style: none;
+            margin-left: 5px;
+            text-align: center;
+        }
+        span{
+            background: #000;
+            color: #fffdef;
+
+        }
+        img{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            display: none;
+        }
+        .pic .selected{
+            display: block;
+        }
+        .sym{
+            position: absolute;
+            bottom: -378px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="pic">
+            <img class="selected" src="../image/my1.jpg" alt="">
+            <img src="../image/my2.jpg" alt="">
+            <img src="../image/my3.jpg" alt="">
+            <img src="../image/my4.jpg" alt="">
+        </div>
+        <ul>
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="sym">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+    </div>
+    <script>
+        var aLi=document.getElementsByTagName("li");
+        var aImg=document.getElementsByTagName("img");
+        var oPrev=document.getElementById("prev");
+        var oNext=document.getElementById("next");
+        var nowIndex=0;
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onmouseover=function () {
+                nowIndex=this.index;
+                play(this.index);
+            };
+        }
+        oNext.onclick=function () {
+            nowIndex++;
+            if (nowIndex==aLi.length){
+                nowIndex=0;
+            }
+            play(nowIndex);
+        };
+        oPrev.onclick=function () {
+            nowIndex--;
+            if (nowIndex==-1){
+                nowIndex=aLi.length-1;
+            }
+            play(nowIndex);
+        };
+        function play(index) {
+            for (var j=0;j<aLi.length;j++){
+                aLi[j].className="";
+                aImg[j].className="";
+            }
+            aLi[index].className="selected";
+            aImg[index].className="selected";
+        }
+    </script>
+</body>
+</html>
