@@ -42,7 +42,8 @@
             width: 400px;
             height: 400px;
             position: absolute;
-            display: none;
+            /*display: none;*/
+            opacity: 1;
         }
         .pic .selected{
             display: block;
@@ -108,10 +109,10 @@
         function changImg(index) {
             for (var j=0;j<aLi.length;j++){
                 aLi[j].className="";
-                aImg[j].className="";
+                // aImg[j].className="";
             }
             aLi[index].className="selected";
-            aImg[index].className="selected";
+            // aImg[index].className="selected";
         }
         oContainer.onmouseover=function(){
             clearInterval(timer);

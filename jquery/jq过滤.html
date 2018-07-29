@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+请选择：<input type="text" id="ipt">
+<ul>
+    <li>哈尔滨</li>
+    <li>哈尔滨的冬天</li>
+    <li>哈尔滨的冬天有多美</li>
+    <li>冬天美</li>
+    <li>冬天有多美</li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $("#ipt").on("keyup",function () {
+            var value=$(this).val();
+            $("li").css("color","");
+            if (value!="") {
+                $("li:contains(" + value + ")").css("color", "red");
+            }
+        })
+    });
+
+</script>
+</body>
+</html>

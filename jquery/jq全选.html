@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+</head>
+<body>
+    <h1>您的爱好是什么</h1>
+    <input type="checkbox">足球
+    <input type="checkbox">篮球
+    <input type="checkbox">排球
+    <input type="checkbox">网球
+    <br/>
+    <button id="all">全选</button>
+    <button id="none">全不选</button>
+    <button id="reverse">反选</button>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("#all").on("click",function () {
+                $("input[type=checkbox]").prop("checked",true);
+            });
+            $("#none").on("click",function () {
+                $("input[type=checkbox]").prop("checked",false);
+            });
+            $("#reverse").on("click",function () {
+                $("input[type=checkbox]").each(function (index,elem) {
+                //     if($(elem).prop("checked")){
+                //         $(elem).prop("checked",false);
+                //     }else{
+                //         $(elem).prop("checked",true);
+                //     }
+                // })
+                elem.checked=!elem.checked;
+
+                });
+
+            });
+
+        })
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

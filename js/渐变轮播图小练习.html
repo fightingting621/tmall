@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        var oDiv1=document.getElementById("div1");
+        var timer=setInterval(function () {
+            var o=getComputedStyle(oDiv1,false).opacity;
+            var w=parseInt(getComputedStyle(oDiv1,false).width);
+            if (o<=0.01){
+                o=0;
+                clearInterval(timer);
+            }
+            oDiv1.style.opacity=o*0.9;
+            if (w>=1000){
+                w=1000;
+                clearInterval(timer);
+            }
+            oDiv1.style.width=w+100+"px";
+            console.log(o);
+            console.log(w);
+        },50)
+    </script>
+</body>
+</html>
