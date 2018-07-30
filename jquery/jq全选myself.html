@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择</title>
+</head>
+<body>
+    <div>
+        <h1>你的梦想是什么</h1>
+        <input type="checkbox">成为一名程序员
+        <input type="checkbox">成为一名优秀的程序员
+        <input type="checkbox">成为一名非常优秀的程序员
+        <input type="checkbox">成为一名非常超级优秀的程序员
+        </br>
+        <button id="all">全选</button>
+        <button id="none">全不选</button>
+        <button id="opposite">反选</button>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+           $("#all").on("click",function () {
+               $("input[type=checkbox]").prop("checked",true);
+           });
+           $("#none").on("click",function () {
+               $("input[type=checkbox]").prop("checked",false);
+           });
+           $("#opposite").on("click",function () {
+               $("input[type=checkbox]").each(function (index,elem) {
+                   // elem.checked=!elem.checked;
+                   if(elem.checked){
+                       elem.checked=false;
+                   }else {
+                       elem.checked=true;
+                   };
+               });
+           });
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
