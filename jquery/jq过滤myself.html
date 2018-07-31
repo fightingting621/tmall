@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤筛选</title>
+</head>
+<body>
+    请输入：<input type="text">
+    <div>程序员健康</div>
+    <div>程序员工作时间</div>
+    <div>工作时间与健康的关系</div>
+    <div>程序员掉发吗</div>
+    <div>电脑辐射的危害</div>
+    <div>辐射会使人掉发吗</div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("input").on("keyup",function () {
+                var value=$(this).val();
+                $("div").css("color","");
+                console.log(value);
+                if (value!=""){
+                    $("div:contains("+ value +")").css("color","#0f0");
+                };
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

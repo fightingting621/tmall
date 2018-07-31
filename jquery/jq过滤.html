@@ -18,6 +18,7 @@
     $(function () {
         $("#ipt").on("keyup",function () {
             var value=$(this).val();
+            console.log(value);
             $("li").css("color","");
             if (value!="") {
                 $("li:contains(" + value + ")").css("color", "red");
