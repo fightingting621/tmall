@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #top,#bottom,#content{
+            background: #CCCCCC;
+            width: 960px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        #image,#text{
+            width: 960px;
+            margin: 30px auto;
+        }
+        img{
+            width: 100%;
+        }
+        #text{
+            height: 300px;
+        }
+        #left{
+            float: left;
+            background: #df5000;
+            width: 70%;
+            height: 300px;
+            /*margin-right:10px;*/
+        }
+        #right{
+            float: right;
+            background: #00A5FF;
+            width: 27%;
+            height: 300px;
+            overflow: hidden;
+        }
+        @media (max-width:960px) {
+            #top,#bottom,#content,#image,#text{
+                width: 100%;
+            }
+        }
+        @media (max-width: 560px) {
+            #left,#right {
+                width: 100%;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="top">
+    <h1>页首</h1>
+</div>
+<div id="content">
+    <h1>内容</h1>
+</div>
+<div id="image">
+    <img src="demoimg.jpg" alt="">
+</div>
+<div id="text">
+    <div id="left">dsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmff</div>
+    <div id="right">dsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmfdsjdnjkdj,kdnfcnvg gcrgr iwogkkrcg pwgikmrgwemwmf</div>
+</div>
+<div id="bottom">
+    <h1>页尾</h1>
+</div>
+
+</body>
+</html>
