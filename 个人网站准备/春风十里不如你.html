@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>春风十里不如你</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background: #CCCCCC;
+        }
+        #div1{
+            width:520px;
+            padding-top:520px;
+            background: url("../移动端/lov1.jpg");
+            background-size: cover;
+            opacity: 1;
+            margin: 0 auto;
+            display: none;
+        }
+        #div3{
+            width:520px;
+            padding-top:520px;
+            background: url("../移动端/lov3.jpg");
+            background-size: cover;
+            opacity: 1;
+            margin: 0 auto;
+            display: none;
+
+        }
+        #div2{
+            width:621px;
+            margin:0 auto;
+        }
+        #butt{
+            width: 520px;
+            margin: 0 auto;
+        }
+        #butt input{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+        }
+        .left{
+            background-color: lightblue;
+            color:blanchedalmond;
+            margin-right: 115px;
+        }
+        .right{
+            background-color: lightpink;
+            color:lightseagreen;
+        }
+        .first{
+            color: #ff0000;
+            font-size: 20px;
+            display: none;
+        }
+        .second{
+            color: green;
+            font-size: 20px;
+            display: none;
+        }
+        .third{
+            color:blue;
+            font-size: 20px;
+            display: none;
+        }
+        .forth{
+            color:yellow;
+            font-size: 20px;
+            display: none;
+        }
+
+        @media (max-width: 520px) {
+            #div1{
+                width: 100%;
+               padding-top: 100%;
+            }
+            #div2{
+                width: 100%;
+                padding-top:0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="butt">
+        <input type="button" class="left" value="一个人的时候在想你">
+        <input type="button" class="right" value="在一起的时候很爱你">
+    </div>
+    <div id="div1">
+    </div>
+    <div id="div3">
+    </div>
+    <div id="div2">
+        <ul class="first">today is the first day I miss you,something I want to do to miss you.Maybe I am not a perfect girl,but I must try my best to do everything for you!</ul>
+        </br>
+        <ul class="second">明天你就要入职面试，我知道你会紧张，焦虑，甚至有些疲惫，但是没有关系，我会一直在你身后支持你，鼓励你，长长的路，总要慢慢的一步一个脚印，脚踏实地的走下去。</ul>
+        <br>
+        <ul class="third">everyone in the world is not easy.So no matter how difficult things you met,please do not say I can not.You are the best,You are the superman in my mind.</ul>
+        </br>
+        <ul class="forth">一个人可以走的很快，两个人可以走的很远，这是你对我说过的话。和你在一起，我学会了包容，学会了体谅，学会了做自己最好。</ul>
+    </div>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+
+        $(".left").on("click",function () {
+           $(this).css("background","red");
+            $(".right").css("background","");
+            $("#div3").css("display","block");
+            $("#div1").css("display","none");
+            $(".first").css("display","block");
+            $(".second").css("display","block");
+            $(".third").css("display","none");
+            $(".forth").css("display","none");
+        });
+        $(".right").on("click",function () {
+            $(".left").css("background","");
+            $(this).css("background","orange");
+            $("#div3").css("display","none");
+            $("#div1").css("display","block");
+            $(".first").css("display","none");
+            $(".second").css("display","none");
+            $(".third").css("display","block");
+            $(".forth").css("display","block");
+        })
+
+
+
+    </script>
+</body>
+</html>

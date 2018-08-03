@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正方形</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #div1{
+            width: 100vw;
+            height: 100vw;
+            background: #df5000;
+        }
+        /*#div1{*/
+            /*width: 100vh;*/
+            /*height: 100vh;*/
+            /*background: #df5000;*/
+        /*}*/
+        #div2{
+            width: 100%;
+            padding-top: 100%;
+            background: #00A5FF;
+        }
+        #div3{
+            width: 100%;
+            background:#00ff00;
+        }
+        #div3:after{
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+        #div4{
+            width: 100%;
+            background:deeppink;
+            overflow: hidden;
+        }
+        #div4:after{
+            content: "";
+            display: block;
+            margin-top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+    <div id="div3">
+
+    </div>
+    <div id="div4">
+
+    </div>
+</body>
+</html>

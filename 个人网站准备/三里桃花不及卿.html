@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三里桃花不及卿</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 25%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="small">
+
+    </div>
+    <div id="big"></div>
+    <script src="../三里/zepto.js"></script>
+    <script src="../三里/touch.js"></script>
+    <script>
+        $(function(){
+            for(var i=0;i<4;i++){
+                $("#small").append("<img src='../三里/lov"+(i+1)+".jpg'>")
+
+            }
+        })
+
+    </script>
+</body>
+</html>

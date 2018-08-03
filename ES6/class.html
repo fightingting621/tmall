@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        // function User() {
+        //     this.name="tingting";
+        //     this.agea=20;
+        // }
+        // User.prototype.say=function () {
+        //     console.log(this.name);
+        //     console.log(this.agea)
+        // };
+        // var u=new User();
+        // u.say();
+        // function Son() {
+        //     this.name="fengfeng";
+        // }
+        // Son.prototype=new User();
+        // var s=new Son();
+        // s.say();
+        // function User() {
+        //     this.name="zs";
+        //     this.age=1000;
+        // }
+        // User.prototype.say=function () {
+        //     console.log(this.name);
+        // };
+        // // var u=new User();
+        // // u.say();
+        // function Son() {
+        //     this.name="lalala";
+        // }
+        // Son.prototype=new User();
+        // var s=new Son();
+        // s.say();
+        class User{
+            constructor(n){
+                this.name=n;
+            }
+            say(n){
+                 console.log(n);
+            }
+        }
+        var u=new User();
+        u.say("lalalala");
+        class Son extends User{
+            constructor(n,a){
+                super(n);
+                this.age=a;
+            }
+            eat(){
+                console.log(this.age);
+            }
+        }
+        var s=new Son("zz",12);
+        s.eat();
+        s.say();
+
+
+    </script>
+</body>
+</html>

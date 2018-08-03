@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: none;
+            width: 25%;
+            height: 100px;
+            float: left;
+            border-bottom: 4px solid #000000;
+            border-right: 4px solid #000000;
+            box-sizing: border-box;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+        }
+        #big-img{
+            display: none;
+            height: 100%;
+            background-color: #333333;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <div id="big-img">
+    </div>
+    <script src="../zepto.js"></script>
+    <script src="../touch.js"></script>
+    <script>
+        $(function(){
+            var iNow=0;
+            for (var i=0;i<24;i++){
+                $("#container").append("<img src='pi"+(i+1)+".jpg'>");
+            }
+            $("#container").on("tap","img",function () {
+                // console.log(11111);
+                $("#container").hide();
+                iNow=$(this).index();
+                $("#big-img").css("background-image","url(pi"+($(this).index()+1)+".jpg)").show();
+                // $("#big-img").css("background-image","url(pi1.jpg)").show();
+            });
+            $("#big-img").on("tap",function () {
+                $(this).hide();
+                $("#container").show();
+            });
+            $("#big-img").on("swipeLeft",function () {
+                iNow++;
+                if (iNow>23){
+                    iNow=0;
+                }
+                $("#big-img").css("background-image","url(pi"+(iNow+1)+".jpg)");
+                // console.log(111111)
+            });
+            $("#big-img").on("swipeRight",function(){
+                iNow--;
+                if (iNow<0){
+                    iNow=23;
+                }
+                $("#big-img").css("background-image","url(pi"+(iNow+1)+".jpg)");
+            })
+
+
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>
