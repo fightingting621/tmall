@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+    // var n="xxxx";
+    // var name="zs";
+    // var str="my";
+    // var myName="lalalalal";
+    // var obj={
+    //     name,
+    //     //只在这里面写属性不赋值，他的默认值就会是外面定义的变量的值，这个叫对象属性的简写
+    //     age:12,
+    //     myName:"this is my name",
+    //     [str+"Name"]:"sssssssssss"
+    // };
+    // console.log(obj);
+    // console.log(window);
+    // console.log(obj[str+"Name"]);
+
+    // var o1={
+    //     age:12
+    // };
+    // var o2={
+    //     sex:"nv"
+    // };
+    // console.log(Object.assign(o2,o1));
+    // console.log(Object.assign(o1,{number:220099}));
+    // //加入之后原来的值也会被改变，浅克隆
+    // o2.sex="mam";
+    // console.log(Object.assign(o2,o1));
+    // console.log(o2);
+
+    // console.log(+0==-0);//true
+    // console.log(NaN==NaN);//false
+    // console.log(Object.is(+0==-0));//false
+    // console.log(Object.is(NaN,NaN));//true
+    // //这个改变记住
+
+    var arr=[1,4,6,NaN,34,25];
+    Array.prototype.io=function (n) {
+        for (var i=0;i<arr.length;i++){
+            if (Object.is(n,arr[i])){
+                return i;
+            }
+        }
+        return -1;
+    };
+    console.log(arr.io(NaN));
+
+
+
+
+
+
+</script>
+</body>
+</html>

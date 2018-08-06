@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构</title>
+</head>
+<body>
+<script>
+    // var arry=[2,4,6,7];
+    // var [a,c,b,d]=arry;
+    // console.log(a,b,c,d);
+
+    // [a,b,c,d]=[3,5,7,7];
+    // console.log(a,b,c,d);
+
+    // var arry=[2,,6];
+    // var [a,b=3,c,d=10]=arry;
+    // console.log(a,b,c,d);
+
+    // var arry=[1,3,4,[9,67]];
+    // var [a,b,c,d]=arry;
+    // console.log(a,b,c,d,e);
+    // var [a,b,c,[d,e]]=arry;
+    // console.log(a,b,c,[d,e]);
+    // console.log(a,b,c,d,e);
+    // ----------------------------------下面是默认值的体现情况，不写或者undefined
+    // var arry=[1,undefined,4,[9,67]];
+    // var [a,b=10,c,[d,e]]=arry;
+    // console.log(a,b,c,d,e);
+
+    // -----------------------------下面是把两个数的位置换着输出的几种方法
+    //方法1
+    // var a=10,b=8;
+    // a=a+b;//13
+    // b=a-b;//3
+    // a=a-b;//10
+    // console.log(a,b);
+    // // 不断变换a和b的值，都是反着输出的
+    //方法2
+    // var a=18,b=8;
+    // var [a,b]=[b,a];
+    // console.log(a,b);
+    // 方法3
+    // var a=20,b=30;
+    // b=[a,a=b][0];
+    // console.log(a,b)
+
+    // var obj={
+    //     a:20,
+    //     b:10
+    // };
+    // var {a:x,b:y}=obj;
+    // console.log(x,y);
+    // var {a,b}=obj;
+    // console.log(a,b);
+    // var obj={
+    //     a:20,
+    //     b:{
+    //         c:3
+    //     }
+    // };
+    // var {a:x,b:{c:y}}=obj;
+    // console.log(x,y);
+    //解构的时候 一定要注意结构后要和结构之前的形式一样
+    // function ting(a,b) {
+    //     console.log(a,b);
+    // }
+    // ting(10,20);
+    // function ting([a,b]) {
+    //     console.log(a,b);
+    // }
+    // ting([10,30]);
+    // function ting({a:x,b:y}) {
+    //     console.log(x,y);
+    // }
+    // ting({a:10,b:00});
+    // ting({});
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this指向问题</title>
+</head>
+<body>
+<script>
+    function fn(a,b,c) {
+        console.log(a,b,c);
+        console.log(this);
+    }
+    var o={
+        name:"lala"
+    };
+    // fn.call(o,1,2,3);
+    // fn.apply(o,[1,2,3])
+    // var l=fn.bind(o,1,2,3);
+    // l();
+    // fn.bind(o,1,2,3)();
+
+</script>
+</body>
+</html>

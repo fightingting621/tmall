@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符</title>
+</head>
+<body>
+<script>
+    // //...叫扩展运算符
+    // var a1=[1,2,3,4,5];
+    // var a2=["q","w","e"];
+    // var a3=a2.push(a1);
+    // //返回的内容付给了a3，返回值a3是数组的长度
+    // //把a1的内容放在a2里面；
+    // a2[1]=0;
+    // console.log(a1);
+    // console.log(a2);
+    // console.log(a3);
+// -----------------------------------------//
+
+    // var a1=[1,2,3,4,5];
+    // var a2=["q","w","e"];
+    // // var a3=[...a2[1],...a1];
+    // var a3=[...a2,...a1];
+    //
+    // a2[1]=0;
+    // console.log(a1);
+    // console.log(a2);
+    // console.log(a3);
+    // -------------------
+    // var a=[1,2,3];
+    // var b=[...a,1];
+    // console.log(b);
+    // ----------------------------------
+    // var a=[1,2,3];
+    // var c=[4,5,6];
+    // c[2]=0;
+    // var b=a.concat(c,['aaaaa',8]);
+    // console.log(b);
+    // console.log(c);
+    // -----------------------------扩展运算符改变值，原数组不变，其他的变，如果不是用扩展运算符写的原数组的值也将改变
+
+
+
+
+
+
+
+    // var o1={
+    //     a:1,
+    //     b:2
+    // };
+    // var o2={
+    //     c:3,
+    //     d:4
+    // };
+    // var obj={
+    //     ...o1,
+    //     ...o2
+    // };
+    // console.log(obj);
+    // console.log(o1);
+    // o1.a=2;
+    // console.log(obj);
+    // obj.a=2;
+    // console.log(obj);
+    // console.log(o1);
+    // // --------------------------------对象这个大括号，你改变数值，原来的也改了，和数组不同
+   //下面这个是扩展运算符的反运算
+   //  var fn=(...args)=>{
+   //      console.log(args[0]);
+   //  };
+   //  fn(1,2,3);
+
+</script>
+</body>
+</html>

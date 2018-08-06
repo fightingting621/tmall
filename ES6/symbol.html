@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>symbol</title>
+</head>
+<body>
+<script>
+    // //基本数据类型 ： number string boolean undefined null symbol
+    // var s=Symbol();
+    // console.log(s);
+    var a=Symbol();
+    var obj={
+        name:"zs"
+    };
+    obj[a]="1111";
+    console.log(obj);
+
+</script>
+</body>
+</html>

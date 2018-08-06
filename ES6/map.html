@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+</head>
+<body>
+<script>
+    var m=new Map();
+    m.set("a","我是一个粉刷匠");
+    m.set(1,"粉霜本领强");
+    m.set(true,"我要把那新房子");
+    m.set(undefined,"shua de beautiful");
+    m.set(null,11111);
+    m.set(NaN,"xxxx");
+    m.set([1,2],"zhongtaiyang");
+    console.log(m.get([1,2]));
+    //如果想让名字是数组，必须要先定义一个变量，因为数组和数组是不相同的
+
+    var arr=[1,2];
+
+    m.set(arr,"son");
+    console.log(m.get(arr));
+
+    m.set({name:"zs"},111111);
+    console.log(m.get({name:"zs"}));
+    //对象不能直接内容为名字，必须定义为变量，然后变量为名在继续写内容
+
+    var obj={
+      name:"zs",
+      age:15
+    };
+
+    m.set(obj,111111);
+    console.log(m.get(obj));
+
+
+    console.log(m);
+    console.log(m.get("a"));
+    console.log(m.get(1));
+    console.log(m.get(true));
+    console.log(m.get(undefined));
+    console.log(m.get(null));
+    console.log(m.get(NaN));
+    console.log(m.size);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // //回调嵌套  callback cell
+    // $.get("a.json",function (d1) {
+    //     console.log(d1.job);
+    //     $.get("b.json",function (d2) {
+    //         console.log(d2.age);
+    //         $.get("c.json",function (d3) {
+    //             console.log(d3.sex);
+    //         });
+    //     });
+    // });
+
+
+    //var p=new Promise 里面一个function,两个参数，一个是成功，一个是失败
+    //p.then中包含两个函数，一个是成功的时候执行的，一个是失败的时候执行的函数
+    // var f1=function () {
+    //     var p=new Promise(function (resolve,reject) {
+    //         setTimeout(function () {
+    //             resolve(1111);
+    //         },1000);
+    //     });
+    //     return p;
+    // };
+    // var f2=function () {
+    //     var p=new Promise(function (resolve,reject) {
+    //         setTimeout(function () {
+    //             reject(2222)
+    //         },2000);
+    //     });
+    //     return p;
+    // };
+    // var f3=function () {
+    //     var p=new Promise(function (resolve,reject) {
+    //         setTimeout(function () {
+    //             resolve(33333)
+    //         },3000);
+    //     });
+    //     return p;
+    // };
+    // var p=new Promise(function (resolve,reject) {
+    //     console.log("0000");
+    //     setTimeout(function () {
+    //         resolve(4444);
+    //     },1000);
+    // });
+    // p.then((data)=>{
+    //     console.log(data);
+    //     return f1();
+    // }).then((data)=>{
+    //     console.log(data);
+    //     return f2();
+    // }).then((data)=>{
+    //     console.log(data);
+    //     return f3();
+    // },(data)=>{
+    //     console.log("lalala");
+    //     return p;
+    // }).then((data)=>{
+    //     console.log(data);
+    //     // return p;
+    // }).catch(()=>{
+    //     console.log("fail");
+    // })
+
+
+    // var p1=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         // console.log(111111111);
+    //         reject(111);
+    //     },300);
+    // });
+    // var p2=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         reject(2222);
+    //     },500);
+    // });
+    // var p3=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         reject(333);
+    //     },100);
+    // });
+    // var p=Promise.all([p1,p2,p3]);
+    // p.then((data)=>{
+    //     console.log(data);
+    // },(data)=>{
+    //     console.log(data+"sssss");
+    // });
+
+
+
+
+    // //竞速 race只输出时间最短的
+    // var p1=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         // console.log(111111111);
+    //         resolve(111);
+    //     },30);
+    // });
+    // var p2=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         resolve(2222);
+    //     },500);
+    // });
+    // var p3=new Promise(function (resolve,reject) {
+    //     setTimeout(function () {
+    //         resolve(333);
+    //     },100);
+    // });
+    // var p=Promise.race([p1,p2,p3]);
+    // p.then((data)=>{
+    //     console.log(data);
+    // },(data)=>{
+    //     console.log(data+"wwwwwwww");
+    // });
+
+
+
+
+    // var num=0;
+    // setTimeout(function () {
+    //     num++;
+    //     if (num==3){
+    //         console.log("success");
+    //     }
+    // },1000);
+    // setTimeout(function () {
+    //     num++;
+    //     if (num==3){
+    //         console.log("success");
+    //     }
+    // },2000);
+    // setTimeout(function () {
+    //     num++;
+    //     if (num==3){
+    //         console.log("success");
+    //     }
+    // },3000)
+
+
+
+
+    // var num=0;
+    // setTimeout(function () {
+    //     num++;
+    // },1000);
+    // setTimeout(function () {
+    //     num++;
+    // },2000);
+    // setTimeout(function () {
+    //     num++;
+    // },3000);
+    // var timer=setInterval(function () {
+    //     if (num==3){
+    //         console.log("success");
+    //         clearInterval(timer);
+    //     }
+    // },50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

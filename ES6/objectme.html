@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+    // var n="xxxx";
+    // var str="my";
+    // var obj={
+    //     n,
+    //     age:13,
+    //     myname:"girl"
+    // };
+    // console.log(obj);
+    // console.log(obj[str+"name"]);
+    //
+    //
+    // var o1={
+    //     age:12
+    // };
+    // var o2={
+    //     sex:"girl"
+    // };
+    // console.log(Object.assign(o2,o1,{a:"b"},{c:"d"},"aa"));
+
+    // console.log(+0==-0);
+    // console.log(Object.is(+0,-0));
+    // console.log(NaN==NaN);
+    // console.log(Object.is(NaN,NaN));
+
+
+    var arr=[1,2,3,4,NaN,5,6,7];
+    Array.prototype.io=function (n) {
+        for (var i=0;i<arr.length;i++){
+            if (Object.is(n.this[i])){
+                return i;
+            }
+        }
+        return -1;
+    };
+    console.log(arr.io(NaN));
+</script>
+</body>
+</html>
