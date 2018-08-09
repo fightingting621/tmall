@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v_Bind</title>
+    <style>
+        .red{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+        .font{
+            font-size: 30px;
+        }
+        .green{
+            height: 300px;
+            width: 300px;
+            background: #00ff00;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="fun">click</button>
+    <!--<div id="div1" :class="{red:Isred,font:Isfont}">aaaaaaa</div>-->
+    <!--<div id="div1" :class="[class1,class2]">bbbbbbbb</div>-->
+    <!--<div id="div1" :class="classObj">aaaaaaa</div>-->
+
+
+    <!--<div id="div1" :style="{background:classA,color:classB}">我是啦啦</div>-->
+    <div id="div1" :style="styleObj">我是啦啦</div>
+    <!--<div id="div1" :style="[styleArr1,styleArr2]">我上班竞技场存储技术部</div>-->
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            Isred:true,
+            Isfont:false,
+            class1:'green',
+            class2:'font',
+            classObj:{
+                red:"Isred",
+                font:"Isfont"
+            },
+            classA:'blue',
+            classB:'red',
+            styleArr1:{
+                background:"blue"
+            },
+            styleArr2:{
+                color:"yellow"
+            },
+            styleObj:{
+                background:"blue",
+                color:"yellow"
+            }
+        },
+        methods:{
+            fun(){
+                this.Isred=!this.Isred;
+                this.Isfont=!this.Isfont;
+            }
+        }
+
+
+
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

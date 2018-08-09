@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+<li v-for="val in sortStu">
+    {{val.age}}
+</li>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#div1',
+        data:{
+            stuList:[{
+                age:10
+            },{
+                age:8
+            },{
+                age:25
+            },{
+                age:8
+            }]
+        },
+        // computed:{
+        //     sortStu(){
+        //         return this.stuList.sort(function (a,b) {
+        //             return a.age-b.age;
+        //从小到大
+        // return b.age-a.age;
+        //从大到小
+        //         });
+        //     }
+        // }
+    //     computed:{
+    //         sortStu(){
+    //             return this.stuList.sort(function (a,b) {
+    //                 return Math.random()-0.5;
+    //                 //随机产生顺序
+    //             });
+    //         }
+    //     }
+    // })
+
+
+</script>
+</body>
+</html>

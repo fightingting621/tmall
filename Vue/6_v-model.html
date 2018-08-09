@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" @keyup.enter="fun" v-model="val">
+    <!--//v-model绑定的是下面data里面的val值-->
+    {{msg}}
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:0,
+            val:3
+        },
+        methods:{
+            fun(){
+                // console.log(event.keyCode);
+                // console.log(this.val);
+                // if(event.keyCode==13){
+                    this.msg+=this.val*1;
+                    this.val='';
+                // }
+            }
+        }
+
+
+    })
+
+
+</script>
+</body>
+</html>

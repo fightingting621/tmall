@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="app">-->
+    <!--{{msg}}-->
+    <!--&lt;!&ndash;{{msu}}&ndash;&gt;-->
+    <!--&lt;!&ndash;//写在挂载元素外面以字符串形式输出&ndash;&gt;-->
+<!--</div>-->
+
+
+<!--<div id="app" v-text="msg">-->
+<!--//内容标签一起显示-->
+<!--</div>-->
+<!--<div id="app" v-html="msg">-->
+    <!--&lt;!&ndash;//内容显示&ndash;&gt;-->
+<!--</div>-->
+<!--<script src="vue.js"></script>-->
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            // msg:'hello world',
+            // msu:'lalalal'，
+            msg:'<h1>hhhhhhh</h1>'
+        }
+    });
+    // vm.msg='lalala';
+
+
+
+
+</script>
+</body>
+</html>
