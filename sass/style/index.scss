@@ -1,0 +1,62 @@
+/* 这是一个多行注释*/
+//单行注释
+/*! 我必须要注释你*/
+
+$color:#f00;
+$bg:background;
+
+#div1{
+  background:$color;
+  color: $color;
+};
+#div2{
+  font-size: 12px;
+  a{
+    width: 20px;
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+#div3{
+  height: 30px;
+  .class{
+    background: #00A5FF;
+
+  }
+}
+#div3 {
+  height: 30px; }
+#div3 .class {
+
+  background: #00A5FF;
+}
+#div4{
+  background: #00A5FF;
+}
+$red:#f00;
+#div5{
+  #{$bg}: {
+
+    color: $red;
+    size:23px;
+    image:url("a.json");
+  };
+  border: {
+    left: 0;
+    top: 0;
+  };
+}
+$size:200px;
+$color:#f00;
+#div7{
+  @mixin xxx($size,$color){
+    width: $size;
+    height: $size;
+    background: $color;
+
+
+  }
+
+}

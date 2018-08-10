@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // function* fn() {
+    //     yield "sun";
+    //     yield "star";
+    //     yield "moon";
+    //     return 0;
+    // }
+    // var a=fn();
+    //不能直接写fn().next;那样就会每次都找第一个，p可以把它存一下
+    // var p1=a.next();
+    // var p2=a.next();
+    // var p3=a.next();
+    // var p4=a.next();
+    // console.log(p1);
+    // console.log(p2);
+    // console.log(p3);
+    // console.log(p4);
+
+    // function request(url) {
+    //     $.get(url,res=>{
+    //         console.log(res);
+    //
+    //     });
+    //     return "success";
+    // }
+    // function* fn(){
+    //     yield request("a.json");
+    //     yield request("b.json");
+    //     yield request("c.json");
+    //     return "end";
+    //
+    // }
+    // var p=fn();
+    // var a=p.next();
+    // console.log(a);
+    // console.log(a.value);
+    // var b=p.next();
+    // console.log(b);
+    // var c=p.next();
+    // console.log(c);
+    // console.log(p.next());
+
+
+
+    // function* n() {
+    //     var x=2*(yield 3+5);
+    //     var y=yield x/4;
+    //     var z=yield 11111;
+    //     return 0;
+    // }
+    // var a=n();
+    // var b=a.next();
+    // console.log(b);
+    // var c=a.next(8);
+    // console.log(c);
+    // var d=a.next();
+    // console.log(d);
+    // var e=a.next();
+    // console.log(e);
+
+
+    function* fn() {
+        var x=yield 3+5;
+        var y=16/(yield x);
+        var z=x + (yield y);
+    }
+    var p=fn();
+    var a=p.next();
+    console.log(a);
+    var b=p.next(x.value);
+    console.log(b);
+
+
+</script>
+</body>
+</html>
