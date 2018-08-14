@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="val in arr">{{val}}</li>
+        <button @click="del">del</button>
+    </ul>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            arr:[3,2,3,7,5,1]
+        },
+        methods:{
+            del(){
+                // vm.arr.length=4;
+                // 强行给数组设置长度，则数组长度变为4，后面的元素强行删除，但在视图上并不显示,下面的方法在视图上都有更新
+
+
+                // vm.arr.splice(5);
+                //给数组设置长度，其余的都删除，视图上会显示
+
+                // vm.arr.splice(3,2);
+                //从下标为3得数开始删除，删两个
+
+                // vm.arr.splice(3,2,4);
+                //从下标为3的数开始删除，删除两个元素，把删除位置填上一个4，如果2后面是【3,4】就是把加上位置的4变成数组【3,4】，2后面如果写很多个数字，就把这些数字在删除的那个位置都加上，写几个加几个
+
+                // vm.arr.push(3);
+                //在数组的最后面添加一个3
+
+                // vm.arr.unshift(333);
+                //在数组最前面的位置添加这个元素
+
+                // vm.arr.shift();
+                //从最前面的位置开始删除元素
+
+                // vm.arr.pop();
+                //从最后开始删除
+
+                // vm.arr.sort(function (a,b) {
+                //     return a-b;
+                // });
+                //sort排列顺序，也可以更新视图
+
+                // Vue.set(vm.arr,4,8);
+                //下标为4的地方换成8
+                console.log(vm.arr);
+            },
+
+        }
+    })
+
+
+</script>
+</body>
+</html>

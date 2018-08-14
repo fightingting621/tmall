@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+</head>
+<body>
+<div id="app">
+    <button @click="count++">add</button>
+    <button @click="del">del</button>
+    <input type="text" id="ipt">
+    {{count}}
+</div>
+<script src="vue.js"></script>
+<script>
+    // var timer;
+    new Vue({
+        el:'#app',
+        data:{
+            count:0,
+            timer:null
+
+        },
+        methods:{
+            del(){
+                this.$destroy();
+            }
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+        },
+        created(){
+            console.log('created');
+            // document.getElementById('ipt').focus();
+                this.timer=setInterval(()=>{
+                console.log('setInterval');
+            },1000)
+        },
+        beforeMount(){
+            console.log('beforeMount')
+        },
+        mounted(){
+            console.log('mounted');
+            document.getElementById('ipt').focus();
+            // 不能写在create里面，因为create这个时候还没有获取到这个，其他的写在这两个里面都可以
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate');
+        },
+        updated(){
+            console.log('updated')
+        },
+        beforeDestroy(){
+            console.log('beforeDestroy')
+        },
+        destroyed(){
+            console.log('destroyed');
+            clearInterval(this.timer);
+        },
+    })
+</script>
+</body>
+</html>

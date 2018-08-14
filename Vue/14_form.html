@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<div id="app">
+    <!--<input type="text" v-model="txt">-->
+    <!--&lt;!&ndash;默认值在下面的txt里面写，这两个东西是双向绑定的&ndash;&gt;-->
+    <!--<input type="password">-->
+    <!--&lt;!&ndash;密码格式的，就是里面的东西变成一个小点&ndash;&gt;-->
+    <!--<input type="hidden">-->
+    <!--&lt;!&ndash;框也不显示，后台的时候就会知道有什么用了&ndash;&gt;-->
+    <!--<input type="radio" name="sex">男-->
+    <!--&lt;!&ndash;单选框,名字一样视为一组&ndash;&gt;-->
+    <!--<input type="radio" name="sex">女-->
+
+    <!--<input type="radio" v-model="sex" value="man">男-->
+    <!--<input type="radio" v-model="sex" value="woman">女-->
+    <!--&lt;!&ndash;当绑定同一个v-model时，用value值来区分才是单选&ndash;&gt;这个时候在你绑定的那个sex里面默认值对应的就是你的value值，双向绑定-->
+
+    <!--<input type="checkbox" v-model="hobby" value="football">足球-->
+    <!--<input type="checkbox" v-model="hobby" value="basketball">篮球-->
+    <!--<input type="checkbox" v-model="hobby" value="pingpang">乒乓球-->
+    <!--多选框时要是数组才可以把他们单个单个一点点选，字符串时会自动全部选中，默认值同样是model绑定的那个值里面的value，双向绑定-->
+    <selected name="" id="" v-model="sel" multiple="multiple">
+        <!--下拉列表，multiple多选之后变数组-->
+        <option value="">heida</option>
+        <option value="">linda</option>
+        <option value="">nongda</option>
+        <option value="">ligong</option>
+    </selected>
+
+
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            txt:'aaassss',
+            sex:'man',
+            hobby:['football'],
+            sel:''
+        }
+
+
+    })
+
+
+
+</script>
+</body>
+</html>

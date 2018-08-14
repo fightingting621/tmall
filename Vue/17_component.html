@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app3">
+    <demo3 :x-x="m1" yy="值5" :n-smg-h="m3">
+        <p slot="pre2">我是新加入1</p>
+        <p slot="pre1">我是新加入2</p>
+        <p>p和slot都不命名默认所有p赋值每一个slot，一个slot显示一大堆p</p>
+        <p>p和slot都不命名默认所有p赋值每一个slot，一个slot显示一大堆p</p>
+    </demo3>
+    <div>----------------------这是一条分割线</div>
+    <demo3 :n-smg-h="m2">
+        <!--下面这个里面没有传要添加的元素，所以显示的是默认的slot6-->
+    </demo3>
+</div>
+<script type="text/x-template" id="temp">
+    <!--写了这个，下面的模板可以分行有规则板正的html类型写在上面，不用一直拼接,为了下面可以引用好他，所以给他起一个类名-->
+    <div>
+        <!--如果想在demo里面加东西，必须用slot占位，可以有默认值，也可以没有，赋值之后会覆盖默认值-->
+        {{XX}}{{yy}}
+        <slot name="pre2">
+            我是默认值2
+        </slot>
+        <!--如果不给slot起名字，他会把所有的p赋值给每一个slot-->
+        <!--想分开赋给每一个，必须写名字相对应-->
+        <h3>
+            <slot>
+                默认值，如果赋值会被覆盖掉
+            </slot>
+            {{NSmgH}}
+        </h3>
+        <slot name="pre1">
+            我是默认值1
+        </slot>
+        <h5>值4</h5>
+    </div>
+
+</script>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app3',
+        data:{
+            msg:'',
+            m1:'值1',
+            m2:'值2',
+            m3:'值3'
+
+        },
+        components:{
+            demo3:{
+                template:'#temp',
+                props:['XX','NSmgH','yy']
+            }
+        }
+    });
+</script>
+</body>
+</html>

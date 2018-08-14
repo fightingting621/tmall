@@ -14,8 +14,8 @@
     <input type="text" v-model="val" @keyup="search">
     <button @click="add">add</button>
     <ul>
-        <li v-for="xx in showArr" :class="{red:xx.active}" @click="xx.active=!xx.active">
-            {{xx.value}}
+        <li v-for="(xx,index) in showArr" :class="{red:xx.active}" @click="xx.active=!xx.active">
+            {{xx.value}} <button @click="del(index)">del</button>
         </li>
     </ul>
 </div>
@@ -45,6 +45,9 @@
                     return elem.value.indexOf(this.val)!=-1;
                 });
                 this.showArr=newArr;
+            },
+            del(index){
+                this.arr.splice(index,1);
             }
 
         }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--第一部分-->
+<!--<div id="app">-->
+    <!--<demo></demo>-->
+    <!--<demo1></demo1>-->
+    <!--{{msg}}-->
+<!--</div>-->
+<!--<div>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;+++++++++++-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
+<!--<div id="app2">-->
+    <!--<demo></demo>-->
+    <!--<demo2></demo2>-->
+    <!--{{msg}}-->
+<!--</div>-->
+
+
+<!--第二部分-->
+<!--<div id="app3">-->
+    <!--<demo3 :x-x="m1" yy="123" :n-smg-h="m3"></demo3>-->
+    <!--&lt;!&ndash;可以在这里直接给yy赋值，也可以把值放在data里面用动态属性调用&ndash;&gt;-->
+    <!--&lt;!&ndash;要想data里面的东西在这个里面显示，一定要触发它，没有触发就要要用动态属性&ndash;&gt;-->
+    <!--<demo3 :n-smg-h="m2"></demo3>-->
+<!--</div>-->
+
+<script src="vue.js"></script>
+<script>
+    // 第一部分
+    //全局组件
+    // Vue.component('demo',{
+    //    template:"<div>我是全局模板：<h1>cccccccccccc</h1></div>"
+    // });
+    // new Vue({
+    //
+    //     el:'#app',
+    //     data:{
+    //         msg:'我也行'
+    //
+    //     },
+    //     //定义在里面的叫局部组件,在局部组件里面的模板，只有在这个选择器里面好使，下一个兄弟里面就不好使了
+    //     components:{
+    //         demo1:{
+    //             template:'<div>我是第一个模板：<h1>aaaaaaaaaa</h1></div>'
+    //         }
+    //     }
+    // });
+    // new Vue({
+    //     el:'#app2',
+    //     data:{
+    //         msg:'其他都一样'
+    //
+    //     },
+    //     components:{
+    //         demo2:{
+    //             template:'<div>我是第二个模板：<h1>bbbbbbbbbbb</h1></div>'
+    //         }
+    //     }
+    // });
+
+
+
+
+    // 第二部分
+    // new Vue({
+    //     el:'#app3',
+    //     data:{
+    //         msg:'',
+    //         m1:'hahaha',
+    //         m2:'lelelele',
+    //         m3:'111111'
+    //
+    //     },
+    //     components:{
+    //         demo3:{
+    //             template:'<div>{{XX}}{{yy}}<h3>{{NSmgH}}</h3></div>',
+    //             // 在js里面是区分大小写的，所以对应在html里面除了第一个 把大写字母写成-小写字母的形式
+    //             props:['XX','NSmgH','yy']
+    //         }
+    //     }
+    // });
+
+
+
+
+
+</script>
+</body>
+</html>
