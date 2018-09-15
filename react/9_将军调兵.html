@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Sum extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    sum:100
+                }
+            }
+            change(){
+                this.setState({
+                    sum:this.state.sum>0?this.state.sum-=10:0,
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <div>全部士兵数量：{this.state.sum}</div>
+                        <BingOne myClick={this.change.bind(this)}></BingOne>
+                        <BingTwo myClick={this.change.bind(this)}></BingTwo>
+                    </div>
+
+                )
+            }
+        }
+        class BingOne extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    small:100
+                }
+            }
+            add(){
+                this.setState({
+                    small:this.state.small>=190?200:this.state.small+=10
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <div>将军a有士兵:{this.state.small}</div>
+                        <button onClick={
+                            ()=>{
+                                this.props.myClick();
+                                this.add();
+                            }
+                        }>调兵</button>
+                    </div>
+
+                )
+            }
+        }
+        class BingTwo extends React.Component{
+            constructor(props){
+                super();
+                this.state={
+                    small:100
+                }
+            }
+            more(){
+                this.setState({
+                    small:this.state.small>190?200:this.state.small+=10
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <div>将军b有士兵:{this.state.small}</div>
+                        <button onClick={
+                            ()=>{
+                                this.props.myClick();
+                                this.more();
+                            }
+                        }>调兵</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Sum></Sum>,
+            document.getElementById("root")
+        )
+
+
+
+
+    </script>
+</body>
+</html>

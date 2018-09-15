@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Wel extends React.Component{
+        constructor(props){
+            super(props);
+
+        }
+        add(num,event){
+            // console.log(event,num);
+            // console.log(event.target);
+            // console.log(event.target.value);
+            // console.log(this.refs.btn);
+            // console.log(this.refs.hello);
+            // event.target.style.background="red";
+            console.log("1111");
+        }
+        render(){
+            return(
+                <div>
+                    <button value="valuelue" onClick={this.add.bind(this,2)} ref="btn"></button>
+                    <div ref="hello"></div>
+                    <button onClick={
+                        (event)=>{this.add(event)}
+                    }>click</button>
+                </div>
+
+            )
+        }
+    }
+    ReactDOM.render(
+        <Wel name="zhangsan"></Wel>,
+        document.getElementById("root")
+    )
+
+
+
+</script>
+</body>
+</html>

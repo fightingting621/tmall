@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Wel extends React.Component{
+            constructor(props){
+                super(props);
+                this.nam="本身属性";
+                this.xx="....";
+            }
+            say(){
+                console.log("我是一个方法");
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>学生简介</h1>
+                        姓名：<div>{this.props.name}</div>
+                        年龄：<div>{this.props.age}{this.props.children}</div>
+                        <div>{this.myname}</div>
+                        <div>{this.nam}</div>
+                        <div>{this.xx}</div>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <Wel name="zhangsan" age="16">篮球</Wel>
+                <Wel name="lisi" age="20">足球</Wel>
+            </div>,
+            document.getElementById("root")
+        )
+
+
+
+    </script>
+</body>
+</html>

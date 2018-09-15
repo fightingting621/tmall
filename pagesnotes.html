@@ -1,12 +1,25 @@
 软件：
-Bootstrap学习布局下载安装一下
+1.Bootstrap学习布局下载安装一下
+2.webpack打包工具
 网站：
-www.jquerymobile.com
-豆瓣API
-birdio
-Zeptojs
+0.axios官方推荐与Vue一起用的  先引入vue再引入它
+1.www.jquerymobile.com
+2.豆瓣API
+3.birdio
+4.es6在nodejs下是好使的，所以如果出现问题可以去nodejs.org这个网站去下载，一路下一步，不要有任何中文，window电脑打cmd或window键+r出现控制台（一个黑框），输入node -v出现版本号说明安装成功  npm-v  cd ES6
+5.Zeptojs
+6.sass网站：www.sass.hk（sass基础教程）
+7.bootstrap
+8.正则表达式，需要可以直接去网上查  手册里面js里面的RegExp什么玩意的那个
+9.vue.js 里面有教程
+10.Vue CLI3
+11.echarts.baidu.com
+12.https://vuex.vuejs.org/
 书：
-js高级程序设计
+1.js高级程序设计
+快捷键：
+ctrl+alt+L 格式化
+Ctrl+F查找
 
 
 
@@ -112,7 +125,201 @@ name:"zs"
 43.promise     resolve(); 返回成功状态的promise对象  reject（）；返回失败状态的promise对象
 44.p.then里面是两个函数，一个成功一个失败，成功调用第一个，失败调用第二个。第二个可以不写函数，写成catch方法
 45.Promise.all()  状态都成功了，按照最长的时间把其他成功的一起输出成为一个数组（一般是这种需求需要用这个函数），如果有一个失败了，就调用失败函数，成功的不管了，但仍然执行，拿出失败中时间最短的那个
-46.Promise.race()  状态都成功了，谁最快先调用谁的，竞速 ，不管成功失败，我只要速度最快那个，成功就调用成功函数，失败就调用失败函数，哪个快要哪个
+46.Promise.race()  谁最快先调用谁的，竞速 ，不管成功失败，我只要速度最快那个，最快的那个是成功就成功，最快那个是失败就是失败
 47.setTimeout不阻滞代码执行，所以他们一起执行
 48.promise用同步方式解决异步问题，一旦状态成功或者失败不可再修改，永远都是这个状态，异步主要就是不阻碍后面代码的执行，p.then要把上面东西执行之后返回p再执行下面的函数
 49.自己本身带有处理失败的防范就先用自己的，没有再找catch的
+50.generator函数function* fn（）{}  里面yield表示把它后面的东西返回给你，返回你那个next函数，并不会参与下次运算，除非你把得到的那个值.value写  函数返回遍历器对象，调用next方法才能继续执行，一直next最后一个结束了说明所有东西结束了返回你想要的，每调用一个next方法就会执行下一个yield后面的东西
+51.res=>{}  这也是箭头函数，res代表参数，一个参数时可以加（）也可以不加
+
+
+
+css预处理器：
+1.sass  ctrl+c 暂停 重写才能继续
+2.变量写在属性名或者大括号里面，必须加#{}
+3.@while输出时前面必须加空格
+
+
+webpack：
+1.npm init -y初始化，-y就是默认的，这条是在一开始输入的，如果不写-y就会一直弹出密码什么的那个需要自己多按几次回车。然后会出现package.json文件package.json文件里面的name不能用webpack需要做一下小小的改动，可以改成my_webpack
+2.npm install webpack webpack-cli --save-dev 安装webpack4（--save-dev局部安装；-dev开发环境；-g全局安装），安装完成会自动出现一个依赖node_modules(npm install webpack@版本号--save-dev 就可以安装你想要的那个版本)
+3.把script里面一开始的配置text改成"build（打包，加构）"：
+4.  ./代表当前目录 dev开发环境
+5.package.json中script里面属性全部清空，写build，build里面的值就是你webpack打包的那个webpack文件夹（运行这个webpack，就是npm run这个build），这步之后在你建的那个生成文件夹dist中的xx.js看你写的代码是否出现了
+6.在webpack.config.json中写module，mode：写开发环境development，之后在xx.js中会生成许多代码，你在原始src文件中的index.js和dist文件中的出口index.html正常写的样式什么的会在xx.js的最后一行显示出来
+7.webpack.config.json中module:{}  模块，例如解决解读css，图片如何转换，压缩
+8.webpack.config.json中plugins:{}配置webpack开发服务功能
+9.webpack.config.json中devServer:{}开发服务
+    devServer：{
+            contentBase：path.resolve(__dirname,'dist'),设置基本目录结构
+            host:'localhost'/'127.0.0.1'，服务器的IP地址，可以使用IP可以使用localhost
+            compress：true，服务端压缩是否开启
+            port：8081.服务器端口
+
+}
+10.entry：配置入口的文件地址，可以是单一入口，也可以是多入口
+11.output：配置出口文件的地址，支持多出口配置
+
+
+
+
+
+
+
+
+
+
+正则表达式（做字符串匹配的）：写在script里面
+1.new RegExp中可以放变量，而//中只能放表达式，正则如果三个满足四个也满足，他会执行四个的，尽可能多的满足，叫贪婪模式
+2./c{1,}/,表示至少一个，有+表示+紧跟着的前面的东西至少有一个，*表示0个及以上，边界不一定是最边上，前面有空格，空格挨着那个也是边界
+3.
+
+
+
+
+
+
+Vue.js框架（中国人开发的）
+1.直接用script引入，关心开发版本，进去右键存储为
+2.var vm=new Vue（{这个里面就是js语法
+    el:'#div1'挂载元素  引号里面写的是选择器
+    data:{   data里面写的是常用数据 指令取得都是它里面的数据
+        msg：‘’
+}data后面一定是对象
+3.Vue大多数只操作data里面的数据，msg什么值Vue就操作什么值
+4.MVC  model数据 view页面 controller控制器  view->controller->m->c->v
+5.mvvm  model view viewmodel实现数据和视图上的转换  双向数据绑定
+
+}）；
+6.v-text=""和类id写在一个位置，“msg”就是显示msg内容  v-html=""如果msg中是标签 html直接显示标签里面的内容  而text标签内容都显示
+7.v-if=“msg”，写在标签里面，如果msg里面是false则证明div里面的内容不显示 不显示连源码都看不见   true则显示，Vue里面内容变了，中心渲染页面，上面的东西还要在执行  v-else后面没有等号括号什么的 v-else使用必须跟在v-if后面
+8.template模板，显示的就是模板里面的内容，它本身标签不显示，template里面的show不好使，show切换display  none和block  频繁切换显示隐藏用show，比重新渲染快     代码量如果特别大用template，只显示一次时用这个
+9.v-for=“ val in arr”写在哪个标签里面这个标签就会循环多次，写在li里面就会出现多个li   （val.index）数组    （val，key，index）对象
+10.一旦用Vue，选用的一定有指令或者大括号 不然就按字符串输出
+11.调控数组=时也可以用push，push返回的是长度，也可以输出时拼接字符串
+12.数组排序 sort从小到大，原数组sort之后也变
+13.arr.sort(function(a,b){return a-b}) 小于等于0，不换位置，大于换位置   如果是对象就是a.age-b.age   conmputed中比较 stuList（）{ return }  b-a就是从大到小   正常按照字符串排序，如果按照数值排序需要调用一个函数
+14.v-on:click=“fun（不传参数可以不加括号）”代表绑定的是click事件，data同类粗就有methods  v-on可以换成@   @click.stop可以阻止冒泡 一般不传event直接在methods里面输出就可以
+15.想要把什么变成数字 可以*1 可以parseInt（） 可以Number（）   @keyup.13（enter）表示键盘输入13会执行该函数
+16.v-model 双向数据绑定核心，只有表单元素才有model  input 密码框 单选多选都是  data和输入框相互影响 实时
+17v-bind（绑定动态属性）：title=“t”  data中写t：xx  t的值可以改 title也随着改    整体的简写就是v-bind-> :
+18.c属性有两个特殊的class和 style    ：class=“{里面可以判断，可以是对象结构，写好多个类，在data里面写true或者false选择加这个或不加这个属性}”：class=“【也可以是数组结构classA，classB，下面也要写在data里面：“对应什么值就可以修改什么属性”】”
+19.style   ：style=“{background：styleA，font-size：styleB也把定义写在data里面styleA：‘’}”一个对象的属性名如果带—要加引号   ：style=“【styleArr，styleArr2也在data里面写值 styleArr：{}】”
+20.v-show后面不能用else  文档流里面有 只不过是display：none 在源码中可以看得见，这是与v-if的区别
+21.computed默认是get 如果不知一个就变为一个对象 set里面不是真正赋值，影响了get从而影响了传的数据
+
+
+form:
+1.单选框input radio  一只有两个name一样的时候才可以视为一组   二单选框中 两个v-model对应一个值，后面要用value来区分，才能单选，model=sex 则sex：’‘引号里面的值和value对应相同
+2.一checkbox多选框  也是按照name分组    二 v-model也要对应值 选中之后里面的值是true  全选中了 数组和字符串所得到的结果不一样， value选中哪个显示哪个 如果model的值设置的为数组，谁选中谁的value值就会加到数组里面，去掉就会从数组里面去掉
+3.多选框只要绑定的值不是数组，对应的就是true和false
+4.写在computed里面的东西在外面调用时不用想methods里面fn（），他不用写括号，直接total
+5.Vue.set(vm.arr,4,8);下标为4的地方换成8
+
+购物车 ：
+1.created（）{}与data平级，一进入页面自动调用，返回的是promise对象  大括号里面写{axios.get（’cart.json（只传一个地址参数就可以）‘）}.then
+2.大括号不能直接写value引号里面，要是写在里面用动态属性去掉引号
+3.vue一个变所有和它相关的都会变         methods中可以直接写一个方法total（）{}，在上面自动调用{{total（）}}，不一定非要某种情况触发它
+
+
+Vue组件开发：
+1.component（参数，对象{
+template：''}）  template就是模板
+component自定义组件，demo是标签名称，对象为demo里面那个模板里面的，以后任何出现demo的地方，都表示template里面的东西，Vue下面的那个component为全局组件，任何作用域里面都能用到   在第二个挂载元素里面找不到第一个挂载元素的msg
+2.写在挂载元素里面和data平级的components为局部的，只有在第一个挂载元素的那个选择器里面好使，在他平行有一个挂载其他的里面不好使，多数为局部的，定义自己的
+3.与template并级的props写一个数组，里面‘xx’，表示template能接收的值，在选择器里面把xx当成一个属性传，数组里面可以有多个，上面可以定义属性多个，在data里面写，遇到指令和大括号才可以用data里面的值，动态属性也可以，直接渲染
+4.html本身不区分大小写，属性也不区分，但是js里面是区分大小写的，如果在js里面用的是大写，把大写换成-和小写  例如 XX=x-x    xMsG=x-ms-g 第一个开头不需加- 从第二个开始，每次遇到大写都把大写换成-小写
+5.模板只能有一个根元素（最大的）
+6.script里面写type=text/x-template属性，可以写html代码.也是只能有一个根，就是最大的只能有一个div或者什么的。如果想在选择器demo里面加东西的话，需要在改变后html里面写一个slot标签《slot》《/slot》slot可以控制它的位置，如果slot里面传了，为默认值，上面传的会覆盖它
+7.如果有多个slot标签，传的那个（可能是一个或者多个）整体会把两个slot都覆盖掉，如果想要分别覆盖，需要在slot里面写name=’p1‘  在上面写slot=’p1‘ 多个赋不同名字，slot是起占位作用，传值就覆盖，不传就默认，不设置默认值只写标签搁那就行
+8.props  父组件往子组件里面传值
+9.子组件往父组件里面传值 事件写在子元素里面了，调用父组件调用不了 用$emit（'close'）
+10.兄弟之间不能直接传值，要先传给他爹他爹再传给他哥或者弟弟
+
+
+Vue CLI3
+1.交互式的脚手架，零配置，基于webpack构建
+2.router-view表示显示东西的位置
+
+
+vue.js
+1.destroy会销毁所有的vue事件，都不好使了，但是渲染的页面不会改变,定时器本身异步，不在这个里面，代码一直跑
+2.created里面获取不到dom元素
+
+路由过渡动画：
+1.v-enter的v是你起的名字，这些东西写在style里面
+2.hash会影响路由的地址样式比history多一个# 对应还有一个history  写在jroute.js的mode里面
+3.路由钩子函数决定允不允许往下走，next（）和next（true）都是允许 to为到某个组件去了 from表示你从哪里来，可以做一个判断，从哪里来或者到哪里去可以不让他跳转
+4.后置钩子，跳转之后执行什么东西
+5.守卫，可以写在单个对象里面，对其定义判断，也可以写在组件里面，写在组件里面先执行
+
+
+Vuex：
+1.action处理异步 multation处理同步
+2.cd进入文件夹   ..跳出vue当前文件夹
+3.components里面一般存放公共组件，view里面存放单独组件
+4.assets里面放资源 文件 图片
+5.引用到全局的 应该写在main.js
+6.rem.js里面，如果var rem=width/6.4则屏幕宽为6.4rem,除数多少 font-size=width/6.4;  height为1rem
+7.view里面写东西router里面配
+8.mvvm框架
+
+
+react.js:
+1.MVC中的V（view）
+2.前两个是用react必须要引用的，第三个是把ES6转成ES5
+3.type="text/babel"识别正常语法
+4.ReactDOM注意大小写
+5.把内容渲染（挂载）在某个里面，外面一定要把内容包裹在唯一的一个根标签里面
+6.把react里面的内容渲染到一开始写的div里面的时候，div原来的内容会被覆盖
+7.react组件：里面也是jsx语法，所以必须写在一个根元素里面,可以嵌套使用，上面直接把内容打包成一个组件，在下面父组件里面引入它，要想传参在父组件里面写，上面接收参数props，在显示的地方{props.你想要的属性}
+8.要想获得开始结束中间写的内容，应该是{props.children}
+9.把return里面的东西写在一个跟标签下，不然他只会输出你写的最后一个标签里面的内容
+10.重复在下面引用，就可以重复调用重复显示
+11.定义组件两种方式：函数、类
+12.在类中返回不直接return  要写一个render 在render中返回你要显示的东西，接收属性的时候在constructor括号中传参数
+13.属性写在constructor里面
+14.props只能传值不能修改，只能进行组件通信
+15.所以方法的调用就需要state,state专门用来修改值的，页面会重新渲染，state是一个属性，写在construcor里面，他是一个对象，大括号
+16.state修改时要用一个setstate方法，方法里面接受一个对象
+17.改变箭头函数的指向：有的时候可能你设置的方法直接指向window，
+    第一种方法：变成箭头函数
+    第二种方法：call：参数就是一个一个罗列，自动调用
+                apply:把参数放在数组里面，自动调用
+                bind：参数一个一个罗列，调用要自己（）调用一下
+18.state只有在类定义中有，在函数定义中没有
+19.组件事件：只能取到虚拟dom里面本身自带的属性
+20.ref是一种属性，能取到真实的dom对象  target只能取到事件源，ref（this.refs.属性）可以取到所有你想取到的东西，可以用来修改样式添加样式
+21.双向数据绑定：react是单向的，双向数据绑定要自己写
+22.表单元素才需要双向数据绑定
+23.初始值用defaultValue，如果用value就不可以更改了
+24.onChange事件，只要内容发生变化就会执行
+25.在渲染样式的时候，类用className因为class与类关键字同
+26.属性里面用this.   方法或者变量里面就直接用就可以
+27.加样式，可以用传统方法 也可以在标签上面直接写上style={}
+28.判断时，写在return上面
+29.三目运算符，在script里面写的时候要用大括号，可以直接return  （ 例如 ？：）
+30.for属性与id是对应的，在一个输入框以及前面的文字分别标签里面写上这两个属性，且属性值一致，则当你点击前面的文字的时候也会获取焦点
+31.输入框里面那个小灰色的字，用的是属性placeholder
+32.函数定义一个组件时，没有state  只能显示，不能改变值
+33.类 要用this.props.   函数，props作为一个形参，直接props. 就可以
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

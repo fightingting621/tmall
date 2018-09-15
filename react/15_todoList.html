@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    list:[
+                        {
+                            name:"吃饭"
+                        },
+                        {
+                            name:"睡觉"
+                        },
+                        {
+                            name:"打豆豆"
+                        },
+                    ]
+                }
+            }
+            saveHandle(val){
+                var arr=this.state.list;
+                arr.push({name:val});
+                this.setState({
+                    list:arr
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>todoList</h1>
+                        <Save myClick={this.saveHandle.bind(this)}></Save>
+                        <ul>
+                            {
+                                this.state.list.map((item,index)=>{
+                                    return <ListItem key={index} item={item}></ListItem>
+                                })
+                            }
+                        </ul>
+
+                        <span>0已完成/0全部</span>
+                    </div>
+                )
+            }
+        }
+        class Save extends React.Component{
+            constructor(){
+                super();
+            }
+            save(){
+                if(this.refs.myText.value){
+                    this.props.myClick(this.refs.myText.value);
+                    this.refs.myText.value="";
+                }
+
+            }
+            render(){
+                return(
+                    <div>
+                        <div>
+                            <label htmlFor="name">任务：</label>
+                            <input id="name" type="text" ref="myText"/>
+                        </div>
+                        <button onClick={this.save.bind(this)}>保存任务</button>
+                    </div>
+                )
+            }
+        }
+        class ListItem extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            render(){
+                return(
+                    <div>
+                        <input type="checkbox"/>
+                        <span>{this.props.item.name}</span>
+                        <button>删除</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById("root")
+        )
+
+
+
+
+    </script>
+</body>
+</html>
