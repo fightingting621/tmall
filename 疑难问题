@@ -1,0 +1,7 @@
+问题1：
+var as11;
+        var nim=as11;
+        as11=123;
+        document.write(nim);
+
+结果为什么是undefined呢？

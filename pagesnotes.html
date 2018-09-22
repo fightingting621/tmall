@@ -303,6 +303,37 @@ react.js:
 31.输入框里面那个小灰色的字，用的是属性placeholder
 32.函数定义一个组件时，没有state  只能显示，不能改变值
 33.类 要用this.props.   函数，props作为一个形参，直接props. 就可以
+34.key 是react里面要用的属性
+35.有状态（类）： 拥有状态可修改 有生命周期   无状态（函数）：没有
+36.生命周期：父组件先走，前三个走完之后开始走子组件，子组件走完，最后走父组件的最后一步，每次修改，页面重新渲染
+
+
+
+
+脚手架：
+1.createstore接收两个参数，第一个是reducer 第二个是初始的值
+2.store.dispatch触发action
+3.reducer就是一个函数
+4.mapStateToProps把store里面state映射到当前props属性
+5.router：switch从上向下匹配，有就行，就不在向下匹配了   exact严格匹配
+6.children里面可以做判断,不管跳转是否匹配到，它都会显示
+7.编程式导航。history.push(),可以在点击跳转时使用，因为点击跳转link就不一样了
+8.不是路由跳过来的，就没有history和location，所以当要使用时，在组件上面引入withrouter，在组件整个外面套上withrouter
+9.prompt路由改变会弹窗
+10.NavLink当用它的时候，他的状态是激活的，可以把单独点的东西加上一个class   active，样式额外自己写
+11.导入外置css文件时，直接引入（import）就行，不用写from哪里
+12.改变active时可以把activeClassName=“”，这样就把active换了
+13.
+
+
+
+
+
+
+
+
+
+
 
 
 

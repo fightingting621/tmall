@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .yes{
+            background: lightpink;
+        }
+        .yes span{
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -16,13 +24,16 @@
                 this.state={
                     list:[
                         {
-                            name:"吃饭"
+                            name:"吃饭",
+                            isFinished:true
                         },
                         {
-                            name:"睡觉"
+                            name:"睡觉",
+                            isFinished:false
                         },
                         {
-                            name:"打豆豆"
+                            name:"打豆豆",
+                            isFinished:true
                         },
                     ]
                 }
@@ -34,6 +45,17 @@
                     list:arr
                 })
             }
+            delHandle(index){
+                console.log(index);
+                var arr=this.state.list;
+                arr.splice(index,1);
+                this.setState({
+                    list:arr
+                })
+            }
+            changeHandle(){
+
+            }
             render(){
                 return(
                     <div>
@@ -42,7 +64,7 @@
                         <ul>
                             {
                                 this.state.list.map((item,index)=>{
-                                    return <ListItem key={index} item={item}></ListItem>
+                                    return <ListItem key={index} item={item} index={index} myDel={this.delHandle.bind(this)} change={this.changeHandle.bind(this)}></ListItem>
                                 })
                             }
                         </ul>
@@ -81,11 +103,15 @@
             }
             render(){
                 return(
-                    <div>
-                        <input type="checkbox"/>
+                    <li className={this.props.item.isFinished?"yes":""}>
+                        <input type="checkbox" defaultChecked={this.props.item.isFinished}/>
                         <span>{this.props.item.name}</span>
-                        <button>删除</button>
-                    </div>
+                        <button onClick={
+                            ()=>{
+                                this.props.myDel(this.props.index);
+                            }
+                        }>删除</button>
+                    </li>
                 )
             }
         }
