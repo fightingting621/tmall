@@ -1,0 +1,22 @@
+.like{
+    display: flex;
+}
+.like-pic img{
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: .3rem;
+}
+.like-con .like-price{
+    color: red;
+    font-size: .3rem;
+
+}
+.like-con{
+    flex: 1;
+}
+.pre-price{
+    text-decoration: line-through;
+}
+.like-right{
+    float:right;
+}

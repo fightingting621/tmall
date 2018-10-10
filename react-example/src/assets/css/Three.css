@@ -1,0 +1,25 @@
+.act{
+    width: 1.5rem;
+}
+.first{
+    height: 30px;
+    font-size: 19px;
+    color: green;
+    font-weight: bold;
+}
+.second{
+    height: 30px;
+    font-size: 19px;
+    color:red;
+    font-weight: bold;
+}
+.third{
+    height: 30px;
+    font-size: 19px;
+    color:orange;
+    font-weight: bold;
+}
+.des{
+    height: 20px;
+    text-align: center;
+}

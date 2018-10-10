@@ -1,0 +1,27 @@
+*{touch-action: none}
+.am-navbar-light{
+    background-color: #00bfae;
+    color:#fff;
+}
+.am-navbar-left, .am-navbar-right{
+    flex: none;
+}
+.am-search{
+    width:100%;
+    background-color:transparent;
+}
+.am-search-cancel{
+    color:#fff;
+}
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
+    width: 57%!important;
+}
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text{
+    font-size: 16px;
+}
+.am-flexbox{
+    background: #fff;
+}
+.am-flexbox .am-flexbox-item{
+    text-align: center;
+}
