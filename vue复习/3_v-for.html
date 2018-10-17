@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(val,index) in arr">
+                陈依升{{val}}----{{index}}
+            </li>
+            <li v-for="v in 3">
+                {{xx}}
+            </li>
+            <li v-for="val in sortList">
+                我的名字是：{{val.name}},我的年龄是：{{val.age}}
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                arr:['小巴狗','小王八','不是人'],
+                xx:"陈依升大坏蛋",
+                stuList:[
+                    {
+                        name:'zs',
+                        age:13
+                    },
+                    {
+                        name:'lisi',
+                        age:19
+                    },
+                    {
+                        name:'cw',
+                        age:9
+                    }
+                ]
+            },
+        computed:{
+                sortList(){
+                    return this.stuList.sort(function (a,b) {
+                            return a.age-b.age;
+                        }
+
+                    )
+                }
+        }
+
+        })
+
+
+
+    </script>
+</body>
+</html>

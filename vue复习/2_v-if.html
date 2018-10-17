@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <template v-if="msg">
+            <div>我是div</div>
+            <p>我是p</p>
+           <span>我是span标签</span>
+        </template>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:true
+            }
+        })
+    </script>
+</body>
+</html>

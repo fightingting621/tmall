@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="fun(1)">点击</button>{{msg}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:0
+            },
+            methods:{
+                fun(a){
+                    this.msg +=a;
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
